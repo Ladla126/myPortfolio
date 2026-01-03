@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 font-sans;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 via-accent-600 to-primary-600 bg-clip-text text-transparent;
+  }
+
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-lg border border-gray-200/50 shadow-xl;
+  }
+
+  .btn-primary {
+    @apply px-7 py-3 rounded-xl text-white font-semibold text-[15.2px] bg-gradient-to-br from-gray-800 to-black transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 active:scale-95;
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0px 12px 28px 0px rgba(0, 0, 0, 0.35);
+  }
+
+  .btn-secondary {
+    @apply px-7 py-3 rounded-xl font-semibold text-[15.2px] bg-white/65 text-black border border-white/60 backdrop-blur-sm transition-all duration-300 hover:bg-white/80 hover:scale-105 hover:-translate-y-0.5 active:scale-95;
+    box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.08);
+  }
+
+  .btn-secondary:hover {
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.12);
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20;
+  }
+
+  .card {
+    @apply glass-effect rounded-2xl p-6 hover:shadow-2xl transition-all duration-300;
+  }
+
+  .skill-card {
+    @apply card hover:scale-105 hover:shadow-2xl hover:shadow-primary-500/30;
+  }
+
+  .project-card {
+    @apply card overflow-hidden cursor-pointer;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .glow-effect {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.5), 0 0 80px rgba(59, 130, 246, 0.3), 0 0 120px rgba(59, 130, 246, 0.1);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #0ea5e9, #a855f7);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #0284c7, #9333ea);
+}
+
+/* Background pattern */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(14, 165, 233, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
