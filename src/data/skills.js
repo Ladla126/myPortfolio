@@ -41,7 +41,7 @@ export const skillCategories = [
             { name: "Node.js", icon: FaNodeJs, color: "#339933" },
             { name: "Express", icon: SiExpress, color: "#000000" },
             { name: "Python", icon: FaPython, color: "#3776AB" },
-            { name: "GraphQL", icon: SiGraphql, color: "#E10098" },
+            { name: "Rest API", icon: SiGraphql, color: "#E10098" },
         ],
     },
     {

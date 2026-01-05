@@ -83,7 +83,7 @@ const Projects = () => {
                                             <FiExternalLink className="text-xl text-gray-900" />
                                         </motion.a>
                                         <motion.a
-                                            href={project.githubUrl}
+                                            href="https://github.com/Samihaiderkhan/Be-Bold-Ecommerce-Website"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             whileHover={{ scale: 1.1 }}
