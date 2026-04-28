@@ -1,28 +1,32 @@
 import { motion } from 'framer-motion';
-import { FaHeart } from 'react-icons/fa';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaHeart, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
 
     const socialLinks = [
-        { icon: FaGithub, url: 'https://github.com/Samihaiderkhan', label: 'GitHub' },
-        { icon: FaLinkedin, url: 'https://www.linkedin.com/in/samiullahsami/', label: 'LinkedIn' },
-        { icon: FaTwitter, url: 'https://www.facebook.com/sami.ullah.sami.442522', label: 'Twitter' },
+        { icon: FaGithub, url: 'https://github.com/Ladla126', label: 'GitHub' },
+        { icon: FaLinkedin, url: 'https://www.linkedin.com/in/khalil-ullah12/', label: 'LinkedIn' },
+        { icon: FaTwitter, url: 'https://x.com/KhalilLadla1?t=uNaHbevc5IRYdUTZhKgBrg&s=09', label: 'Twitter' },
     ];
 
     return (
-        <footer className="relative py-12 bg-white border-t border-gray-200">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <footer className="relative py-16 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="text-center space-y-6"
+                    transition={{ duration: 0.8 }}
+                    className="text-center space-y-8"
                 >
+                    {/* Logo/Brand */}
+                    <div className="flex items-center justify-center gap-2">
+                         <span className="text-2xl font-black bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent uppercase tracking-tighter">[ Code. ]</span>
+                    </div>
+
                     {/* Social Icons */}
-                    <div className="flex items-center justify-center gap-4">
+                    <div className="flex items-center justify-center gap-6">
                         {socialLinks.map((social, index) => {
                             const Icon = social.icon;
                             return (
@@ -33,32 +37,34 @@ const Footer = () => {
                                     rel="noopener noreferrer"
                                     whileHover={{ scale: 1.2, y: -5 }}
                                     whileTap={{ scale: 0.9 }}
-                                    className="p-3 bg-gray-100 rounded-lg hover:bg-gradient-to-br hover:from-primary-500 hover:to-accent-500 transition-all duration-300 group"
+                                    className="p-4 bg-slate-100 dark:bg-slate-900 rounded-2xl text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300 shadow-sm border border-slate-200 dark:border-slate-800 group"
                                     aria-label={social.label}
                                 >
-                                    <Icon className="text-xl text-gray-700 group-hover:text-white transition-colors duration-300" />
+                                    <Icon className="text-xl" />
                                 </motion.a>
                             );
                         })}
                     </div>
 
-                    {/* Copyright */}
-                    <div className="space-y-2">
-                        <p className="text-gray-600 flex items-center justify-center gap-2 flex-wrap">
-                            <span>© {currentYear} SAMI ULLAH KHAN.</span>
-                            <span className="flex items-center gap-1">
-                                Full Stack Developer & AI Engineer
+                    {/* Copyright & Info */}
+                    <div className="space-y-3 font-sans">
+                        <p className="text-slate-900 dark:text-white flex items-center justify-center gap-2 flex-wrap font-black uppercase tracking-widest text-xs">
+                            <span>© {currentYear} Khalil Ullah</span>
+                            <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700" />
+                            <span className="flex items-center gap-1.5">
+                                Web & Mobile App Developer <FaHeart className="text-red-500 animate-pulse" />
                             </span>
                         </p>
-                        <p className="text-gray-500 text-sm">
-                            Crafted with passion and attention to detail
+                        <p className="text-slate-500 dark:text-slate-500 text-sm font-medium italic">
+                            Handcrafted with precision and passion. Always striving for excellence.
                         </p>
                     </div>
                 </motion.div>
             </div>
 
-            {/* Decorative gradient line */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500" />
+            {/* Background elements */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-px bg-gradient-to-r from-transparent via-primary-500/20 to-transparent" />
+            <div className="absolute top-1/2 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.05)_0%,_transparent_70%)] dark:bg-[radial-gradient(circle_at_center,_rgba(14,165,233,0.05)_0%,_transparent_70%)] -z-10" />
         </footer>
     );
 };
