@@ -28,10 +28,11 @@ const TechStackMarquee = () => {
                     x: [0, -1035],
                 }}
                 transition={{
-                    duration: 20,
+                    duration: 25,
                     repeat: Infinity,
                     ease: "linear",
                 }}
+                whileHover={{ opacity: 0.8 }}
                 className="flex whitespace-nowrap gap-12 items-center"
             >
                 {[...icons, ...icons].map((item, index) => (

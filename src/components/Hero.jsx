@@ -1,7 +1,7 @@
-// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { FaReact, FaNodeJs, FaJs, FaPython, FaDocker, FaGitAlt } from 'react-icons/fa';
 import { SiTailwindcss, SiMongodb, SiTypescript, SiNextdotjs } from 'react-icons/si';
+import { FiDownload } from 'react-icons/fi';
 
 const Hero = () => {
     const containerVariants = {
@@ -116,15 +116,16 @@ const Hero = () => {
                             variants={itemVariants}
                             className="flex flex-wrap items-center gap-4"
                         >
-                            <motion.a
-                                href="/KhalilUllahCV.pdf"
-                                download="KhalilUllahCV.pdf"
-                                className="btn-primary inline-block"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                Download Resume
-                            </motion.a>
+                                <motion.a
+                                    href="/KhalilUllahCV.pdf"
+                                    download="KhalilUllahCV.pdf"
+                                    className="btn-primary inline-flex items-center gap-2"
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                >
+                                    <span>Download Resume</span>
+                                    <FiDownload className="text-xl" />
+                                </motion.a>
                             <motion.button
                                 onClick={() => handleScroll('contact')}
                                 className="btn-secondary dark:bg-slate-800 dark:text-white dark:border-slate-700"

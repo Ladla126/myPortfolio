@@ -98,15 +98,28 @@ const Contact = () => {
 
         setIsSubmitting(true);
 
-        // Simulate API call
-        setTimeout(() => {
-            console.log('Form submitted:', formData);
-            setIsSubmitting(false);
-            setSubmitSuccess(true);
-            setFormData({ name: '', email: '', subject: '', message: '' });
+        try {
+            const response = await fetch('https://formspree.io/f/myklqoyv', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
 
-            setTimeout(() => setSubmitSuccess(false), 3000);
-        }, 1500);
+            if (response.ok) {
+                setSubmitSuccess(true);
+                setFormData({ name: '', email: '', subject: '', message: '' });
+                setTimeout(() => setSubmitSuccess(false), 5000);
+            } else {
+                alert('Something went wrong. Please try again or email me directly.');
+            }
+        } catch (error) {
+            console.error('Submission error:', error);
+            alert('Something went wrong. Please check your connection.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (

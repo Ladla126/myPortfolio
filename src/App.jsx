@@ -11,6 +11,7 @@ import CustomCursor from './components/CustomCursor';
 import ScrollToTop from './components/ScrollToTop';
 import Testimonials from './components/Testimonials';
 import TechStackMarquee from './components/TechStackMarquee';
+import LoadingScreen from './components/LoadingScreen';
 
 function App() {
   useEffect(() => {
@@ -21,6 +22,19 @@ function App() {
     } else {
       document.documentElement.classList.remove('dark');
     }
+
+    // Dynamic Title Effect
+    const originalTitle = document.title;
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        document.title = "Don't forget to connect! 👋";
+      } else {
+        document.title = originalTitle;
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
   }, []);
 
   return (
@@ -31,6 +45,7 @@ function App() {
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-accent-500/10 dark:bg-accent-900/20 blur-[120px] animate-pulse" />
       </div>
 
+      <LoadingScreen />
       <CustomCursor />
       <ScrollToTop />
       <Navbar />
