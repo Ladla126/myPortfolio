@@ -31,12 +31,12 @@ export const projects = [
     },
     {
         id: 4,
-        title: "Github Profile explorer",
-        description: "A clone of the Github profile explorer with responsive design, user authentication, and API integration.",
-        image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&q=80",
-        tech: ["React", "Tailwind css", "OpenAI", "API"],
+        title: "Ai Essay Writer App",
+        description: "A premium AI-powered mobile application designed to generate high-quality essays instantly. It features a sophisticated UI with dark/light mode, multi-language support, and customizable essay parameters.",
+        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80", // Placeholder
+        tech: ["React Native", "Expo", "OpenAI API", "Tailwind CSS", "Firebase"],
         liveUrl: "https://example.com",
-        githubUrl: "https://github.com/Samihaiderkhan/Chat-gpt-clone",
+        githubUrl: "https://github.com/Ladla126/Ai_Essay_Writer",
     },
     {
         id: 5,
